@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 30, 2015 9:46:31 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Retailer" table="RETAILER_1C">
+        <id name="retailerId" type="int">
+            <column name="RETAILERID" />
+            <generator class="increment" >
+             <param name="sequence">retailer_sequence_p1</param>
+            </generator>
+        </id>
+        <property name="retailerName" type="java.lang.String">
+            <column name="RETAILERNAME" />
+        </property>
+        <property name="retailerContact1" type="java.lang.String">
+            <column name="RETAILERCONTACT1" />
+        </property>
+        <property name="retailerContact2" type="java.lang.String">
+            <column name="RETAILERCONTACT2" />
+        </property>
+        <property name="retailerAddress1" type="java.lang.String">
+            <column name="RETAILERADDRESS1" />
+        </property>
+        <property name="retailerAddress2" type="java.lang.String">
+            <column name="RETAILERADDRESS2" />
+        </property>
+        <property name="retailerCity" type="java.lang.String">
+            <column name="RETAILERCITY" />
+        </property>
+        <property name="retailerState" type="java.lang.String">
+            <column name="RETAILERSTATE" />
+        </property>
+        <property name="retailerPinCode" type="int">
+            <column name="RETAILERPINCODE" />
+        </property>
+        <property name="seTopBoxLimit" type="int">
+            <column name="SETOPBOXLIMIT" />
+        </property>
+        <property name="creditLimit" type="double">
+            <column name="CREDITLIMIT" />
+        </property>
+        <property name="commissionPercentege" type="int">
+            <column name="COMMISSIONPERCENTEGE" />
+        </property>
+        <property name="serviceCharges" type="double">
+            <column name="SERVICECHARGES" />
+        </property>
+        <property name="retailerInventory" type="java.lang.String">
+            <column name="RETAILERINVENTORY" />
+        </property>
+        <property name="retailerCreationdate" type="java.lang.String">
+            <column name="RETAILERCREATIONDATE" />
+        </property>
+        <property name="totalInventoryCost" type="double">
+            <column name="TOTALINVENTORYCOST" />
+        </property>
+        <property name="retailerStatus" type="java.lang.String">
+            <column name="RETAILERSTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

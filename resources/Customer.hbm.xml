@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 30, 2015 1:07:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Customer" table="CUSTOMER_1C">
+        <id name="customerId" type="int">
+            <column name="CUSTOMERID" />
+            <generator class="increment" >
+             <param name="sequence">customer_sequence_p1</param>
+            </generator>
+        </id>
+        <property name="firstName" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        <property name="emaiId" type="java.lang.String">
+            <column name="EMAIID" />
+        </property>
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="PHONENUMBER" />
+        </property>
+        <property name="address1" type="java.lang.String">
+            <column name="ADDRESS1" />
+        </property>
+        <property name="address2" type="java.lang.String">
+            <column name="ADDRESS2" />
+        </property>
+        <property name="landMark" type="java.lang.String">
+            <column name="LANDMARK" />
+        </property>
+        <property name="pinCode" type="int">
+            <column name="PINCODE" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="creationDate" type="java.lang.String">
+            <column name="CREATIONDATE" />
+        </property>
+        <property name="operatorName" type="java.lang.String">
+            <column name="OPERATORNAME" />
+        </property>
+        <property name="retailerName" type="java.lang.String">
+            <column name="RETAILERNAME" />
+        </property>
+        <property name="customerStatus" type="java.lang.String">
+            <column name="CUSTOMERSTATUS" />
+        </property>
+        <property name="requestedForActivation" type="java.lang.String">
+            <column name="REQUESTEDFORACTIVATION" />
+        </property>
+        <property name="requestedForDeactivation" type="java.lang.String">
+            <column name="REQUESTEDFORDEACTIVATION" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 25, 2015 8:14:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Operator" table="TBL_OPERATOR_1C">
+        <id name="operatorId" type="integer">
+            <column name="OPERATORID" />
+            <generator class="increment" >
+            <param name="sequence">operator_sequence_p1</param>
+            </generator>
+           
+        </id>
+        <property name="opeartorFirstname" type="java.lang.String">
+            <column name="OPEARTORFIRSTNAME" />
+        </property>
+        <property name="operatorLastname" type="java.lang.String">
+            <column name="OPERATORLASTNAME" />
+        </property>
+        <property name="operatorEmail" type="java.lang.String">
+            <column name="OPERATOREMAIL" />
+        </property>
+        <property name="operatorPhone" type="java.lang.String">
+            <column name="OPERATORPHONE" />
+        </property>
+        <property name="operatorShiftstart" type="java.lang.String">
+            <column name="OPERATORSHIFTSTART" />
+        </property>
+        <property name="operatorShiftend" type="java.lang.String">
+            <column name="OPERATORSHIFTEND" />
+        </property>
+        <property name="operatorMaxcustomer" type="java.lang.String">
+            <column name="OPERATORMAXCUSTOMER" />
+        </property>
+        <property name="opeartorCreation" type="java.lang.String">
+            <column name="OPEARTORCREATION" />
+        </property>
+        <property name="operatorActivecustomer" type="java.lang.String">
+            <column name="OPERATORACTIVECUSTOMER" />
+        </property>
+        <property name="operatorStatus" type="java.lang.String">
+            <column name="OPERATORSTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

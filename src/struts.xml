@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtd/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+<constant name="struts.devMode" value="true"/>
+<constant name="struts.custom.i18n.resources" value="com.resources.applicationResources"/>
+
+
+
+<package name="default" extends="struts-default" namespace="/" >
+
+<default-action-ref name="index"> </default-action-ref>
+     
+	<action name="index">
+		<result> login.jsp </result>
+	</action>
+	
+	
+	 <action name="login" class="com.action.LoginAction" method="execute"> 
+		<result name="admin"> home.jsp </result>
+		<result name="operator"> homeoper.jsp </result>
+		<result name="customer"> homecustomer.jsp </result>
+		<result name="retailer"> homeretail.jsp </result>
+		<result name="failure"> loginfailure.jsp</result>
+		<result name="input"> login.jsp</result>
+	</action>
+	
+	
+
+<action name="Home"  class="com.action.LoginAction" method="getrole" >
+<result name="admin">home.jsp</result>
+<result name="operator"> homeoper.jsp </result>
+<result name="customer"> homecustomer.jsp </result>
+<result name="retailer"> homeretail.jsp </result>
+
+</action>
+
+<action name="changepassword"  class="com.action.LoginAction" method="changePassword" >
+<result name="success">successoperation.jsp</result>
+<result name="failure">failureleave.jsp</result>
+<result name="input">changepassword.jsp</result>
+</action>
+
+<action name="setquestion"  class="com.action.LoginAction" method="setQuestion" >
+<result name="success">successoperation.jsp</result>
+<result name="failure">failureleave.jsp</result>
+</action>
+
+<action name="forgot"  class="com.action.LoginAction" method="fetchques" >
+<result name="success">forgotpwd.jsp</result>
+<result name="failure">failurereset.jsp</result>
+</action>
+
+
+<action name="forgotpwd"  class="com.action.LoginAction" method="fetchans" >
+<result name="success">successpassword.jsp</result>
+<result name="failure">failurereset.jsp</result>
+</action>
+
+<action name="newpassword"  class="com.action.LoginAction" method="newpassword" >
+<result name="success">successreset.jsp</result>
+<result name="failure">failurereset.jsp</result>
+</action>
+
+
+
+
+
+<action name="logout"  >
+<result >login.jsp</result>
+</action>
+
+
+<action name="manageOperator">
+<result >HomeOperator.jsp</result>
+</action>
+
+<action name="manageRetailer">
+<result >HomeRetailer.jsp</result>
+</action>
+
+<action name="manageCustomer">
+<result >CustomerManage.jsp</result>
+</action>
+
+<action name="manageCustomer1">
+<result >operatormanage.jsp</result>
+</action>
+
+
+
+<action name="backHome"  >
+<result >HomeOperator.jsp</result>
+</action>
+
+
+<action name="addOperator"  >
+<result >newoperator.jsp</result>
+</action>
+
+<action name="updateOperator"  >
+<result >updatesearch.jsp</result>
+</action>
+<action name="deleteOperator"  >
+<result >deletesearch.jsp</result>
+</action>
+<action name="backHome11"  >
+<result >homeoper.jsp</result>
+</action>
+
+<action name="LeaveRequestsend" class="com.action.OperatorAction" method="deleterequest1" > 
+
+		<result name="success"> successoperation.jsp </result>
+		<result name="failure">failureleave.jsp </result>
+		
+		</action>
+
+<action name="viewoperatorlist" class="com.action.OperatorAction" method="deleterequestlist" > 
+
+		<result name="success">viewoperlist.jsp </result>
+		<result name="failure">failure2.jsp </result>
+		
+		</action>
+
+<action name="deleting1" class="com.action.OperatorAction" method="deleteOperator1" > 
+
+		<result name="success">successdel.jsp </result>
+		<result name="failure">failure4.jsp </result>
+		
+		</action>
+
+
+
+
+<action name="updatesearch"  class="com.action.OperatorAction" method="search1" >
+<result name="success">updateoperator.jsp</result>
+<result name="failure">failuredel.jsp</result>
+<result name="input">updatesearch.jsp</result>
+</action>
+
+<action name="viewAllOperator"  class="com.action.OperatorAction" method="viewall" >
+<result name="success">viewalloperator.jsp</result>
+<result name="failure">failure2.jsp</result>
+</action>
+
+<action name="addingoperator" class="com.action.OperatorAction" method="register" >
+<result name="success">success1.jsp</result>
+<result name="failure">failure1.jsp</result>
+<result name="input">newoperator.jsp</result>
+</action>
+
+<action name="updateoperator1" class="com.action.OperatorAction" method="updateOperator" >
+<result name="success">successleave.jsp</result>
+<result name="failure">failure3.jsp</result>
+<result name="input">updateoperator.jsp</result>
+</action>
+
+<action name="deletesearch"  class="com.action.OperatorAction" method="search1" >
+<result name="success">deleteoperator.jsp</result>
+<result name="failure">failuredel.jsp</result>
+<result name="input">deletesearch.jsp</result>
+</action>
+
+<action name="deleteoperator1" class="com.action.OperatorAction" method="deleteOperator" >
+<result name="success">successdel.jsp</result>
+<result name="failure">failure4.jsp</result>
+</action>
+
+<action name="viewOperatorDetails"  class="com.action.OperatorAction" method="search11"  >
+<result name="success">operatorview.jsp</result>
+<result name="failure">failuredel.jsp</result>
+</action>
+
+<action name="deleteoperator11"  class="com.action.OperatorAction" method="search11"  >
+<result name="success">operupdate.jsp</result>
+<result name="failure">failuredel.jsp</result>
+</action>
+
+<action name="updateoperator11" class="com.action.OperatorAction" method="updateOperator" >
+<result name="success">successleave.jsp</result>
+<result name="failure">failure3.jsp</result>
+<result name="input">updateoperator.jsp</result>
+</action>
+
+
+
+
+<action name="backHome1"  >
+<result >HomeRetailer.jsp</result>
+</action>
+
+<action name="backHome4"  >
+<result >homeretail.jsp</result>
+</action>
+
+<action name="addRetailer"  >
+<result >newretailer.jsp</result>
+</action>
+
+<action name="updateRetailer"  >
+<result >updateSearch1.jsp</result>
+</action>
+<action name="deleteRetailer"  >
+<result >deleteSearch1.jsp</result>
+</action>
+
+<action name="updatesearch1"  class="com.action.RetailerAction" method="search1" >
+<result name="success">updateRetailer.jsp</result>
+<result name="failure">failuredel.jsp</result>
+<result name="input">updateSearch1.jsp</result>
+</action>
+
+<action name="viewRetailerDetails"  class="com.action.RetailerAction" method="search"  >
+<result name="success">retailerview.jsp</result>
+<result name="failure">failuredel.jsp</result>
+</action>
+
+<action name="RetailerView"  class="com.action.RetailerAction" method="search"  >
+<result name="success">retailerupdate.jsp</result>
+<result name="failure">failuredel.jsp</result>
+</action>
+
+<action name="viewAllRetailer"  class="com.action.RetailerAction" method="viewall" >
+<result name="success">viewAllRetailers.jsp</result>
+<result name="failure">failure2.jsp</result>
+
+</action>
+
+<action name="addingRetailer" class="com.action.RetailerAction" method="register" >
+<result name="success">success2.jsp</result>
+<result name="failure">failure1.jsp</result>
+<result name="input">newretailer.jsp</result>
+</action>
+
+<action name="updateRetailer1" class="com.action.RetailerAction" method="updateRetailer" >
+<result name="success">successleave.jsp</result>
+<result name="failure">failure3.jsp</result>
+<result name="input">updateRetailer.jsp</result>
+</action>
+
+<action name="Retailerupdate" class="com.action.RetailerAction" method="updateRetailer" >
+<result name="success">successleave.jsp</result>
+<result name="failure">failure3.jsp</result>
+<result name="input">newretailer.jsp</result>
+</action>
+
+<action name="deletesearch1"  class="com.action.RetailerAction" method="search1" >
+<result name="success">deleteRetailer.jsp</result>
+<result name="failure">failuredel.jsp</result>
+<result name="input">deleteSearch1.jsp</result>
+</action>
+<action name="deleteRetailer1" class="com.action.RetailerAction" method="deleteRetailer" >
+<result name="success">successdel.jsp</result>
+<result name="failure">failure4.jsp</result>
+</action>
+
+
+
+
+<action name="backHome2"  >
+<result >CustomerManage.jsp</result>
+</action>
+<action name="backHome3"  >
+<result >homecustomer.jsp</result>
+</action>
+
+
+<action name="DeleteRequestsend" class="com.action.CustomerAction" method="deleterequest" > 
+
+		<result name="success"> successoperation.jsp </result>
+		<result name="failure">failureleave.jsp </result>
+		</action>
+
+<action name="viewcustomerlist" class="com.action.CustomerAction" method="deleterequestlist" > 
+
+		<result name="success">viewlist.jsp </result>
+		<result name="failure">failure2.jsp </result>
+		</action>
+
+<action name="activationlist" class="com.action.CustomerAction" method="activationlist" > 
+
+		<result name="success">activelist.jsp </result>
+		<result name="failure">failure2.jsp </result>
+		</action>
+		
+<action name="activation" class="com.action.CustomerAction" method="Activation" > 
+
+		<result name="success">successoperation.jsp </result>
+		<result name="failure">failureleave.jsp </result>
+		</action>
+
+
+<action name="addCustomer" class="com.action.CustomerAction" method="fetchoperator" > 
+		<result name="success"> CustomerRegistration.jsp </result>
+		<result name="failure">failureleave.jsp </result>
+		</action>
+	
+<action name="addCustomer1" class="com.action.CustomerAction" method="fetchoperator" > 
+		<result name="success"> operatorcustomer.jsp </result>
+		<result name="failure">failureleave.jsp </result>
+		</action>
+	
+	<action name="viewCustomerDetails" class="com.action.CustomerAction" method="search"> 
+		
+		<result name="success">customerview.jsp</result>
+		<result name="failure">failure2.jsp</result>
+			
+	</action>
+	<action name="viewcustomer" class="com.action.CustomerAction" method="search"> 
+		
+		<result name="success">customerupdate.jsp</result>
+		<result name="failure">failure2.jsp</result>
+			
+	</action>
+	<action name="updatecust" class="com.action.CustomerAction" method="updateCustomer"> 
+		
+		<result name="success">successleave.jsp</result>
+		<result name="failure">failure3.jsp</result>
+		<result name="input">customerupdate.jsp</result>
+			
+	</action>
+	
+	<action name="add" class="com.action.CustomerAction" method="register" > 
+		<result name="success" >Success.jsp</result> 
+		<result name="failure">failure1.jsp </result>
+        <result name="input">CustomerRegistration.jsp</result> 
+</action> 
+
+<!-- 	<action name="add" class="com.action.CustomerAction" method="execute" > -->
+<!-- 		<result name="success" >Success.jsp</result> -->
+<!-- 		<result name="failure">failure3.jsp </result> -->
+<!-- 		<result type="dispatcher"> -->
+<!-- 		<result name="input" type="dispatcher">CustomerRegistration.jsp</result> -->
+		
+<!-- 		<param name="operatorList">${operatorList}</param> -->
+<!-- 		<param name="retailerList">${retailerList}</param> -->
+<!-- 		</result> -->
+<!-- 	</action> -->
+	
+	
+	
+	
+	<action name="add1" class="com.action.CustomerAction" method="execute">
+		<result name="success">successlogout.jsp</result>
+		<result name="failure">failurelogout.jsp </result>
+		<result name="input">customerregister.jsp</result>
+	</action>
+	
+	<action name="viewAllCustomers" class="com.action.CustomerAction" method="listCustomer"> 
+		<result name="success"> viewAllCustomers.jsp </result>
+		<result name="failure"> failure2.jsp </result>
+		<result name="input">CustomerManage.jsp</result>
+	</action>
+	
+	 <action name="updateCustomer"> 
+		<result> UpdateCust.jsp </result>
+	</action>
+	
+	
+	<action name="updateCustomerAction" class="com.action.CustomerAction" method="retrieveCustomer"> 
+		
+		<result name="success">updateCustomers.jsp</result>
+		<result name="failure">failure2.jsp</result>
+			
+	</action>
+	
+	<action name="update1" class="com.action.CustomerAction" method="updateCustomer"> 
+		
+		<result name="success">successleave.jsp</result>
+		<result name="failure">failure3.jsp</result>
+			<result name="input">updateCustomers.jsp</result>
+	</action>
+	
+	
+	<action name="deleteCustomer" >
+		<result>DeleteById.jsp</result>
+	</action>
+	
+	<action name="delete" class="com.action.CustomerAction" method="retrieveCustomer" >
+		
+		<result name="success">viewDelete.jsp</result>
+		<result name="failure">failure2.jsp</result>
+			
+	</action>
+	<action name="deleteConfirm" class="com.action.CustomerAction" method="deleteCustomer" >
+		
+		<result name="success">successoperation.jsp</result>
+		<result name="failure">failure4.jsp</result>
+			
+	</action>
+	<action name="deleting" class="com.action.CustomerAction" method="deleteCustomer1" >
+		
+		<result name="success">successdel.jsp</result>
+		<result name="failure">failure4.jsp</result>
+			
+	</action>
+
+</package>
+</struts>

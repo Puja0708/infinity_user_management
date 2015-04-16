@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">ja113core</property>
+        <property name="hibernate.connection.username">ja113core</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+            <property name="hibernate.connection.url">jdbc:oracle:thin:@172.26.132.40:1521:ORCLILP</property>
+            <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.jdbc.use_get_generated_keys">true</property>
+        <mapping resource="Operator.hbm.xml"/>
+        <mapping resource="Login.hbm.xml"/>
+         <mapping resource="Retailer.hbm.xml"/>
+         <mapping resource="Customer.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
